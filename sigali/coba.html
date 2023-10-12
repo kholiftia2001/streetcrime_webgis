@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leaflet Web Map Kholiftia</title>
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	<style>
+		#map {
+		width: 1250px;
+		height: 590px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="map"></div>
+	<script>
+	var map = L.map('map',{center: [-7.28567202810841,111.59558944625772],zoom: 13});
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+		}).addTo(map);
+		
+	var marker = L.marker([-7.291585646268457, 111.5875070108929]).bindPopup('<h3 style="text-align:center"><b>Gubuk Duwur Hills</b></h3><hr><p style="text-align:justify">Gubuk duwur merupakan destinasi wisata yang berada di Dusun Napis, Desa Napis, Kecamatan Tambakrejo, Kabupaten Bojonegoro, Provinsi Jawa Timur. Gubuk Duwur terletak di atas bukit dan merupakan peninggalan Zaman Belanda yang konon dahulu digunakan sebagai pas pemantauan dari atas bukit.</p><br><img src="https://live.staticflickr.com/65535/52388657140_0fddb14d1b.jpg" alt="Gubuk Duwur Hills" width="300" height="200"/>').addTo(map);
+	
+	var marker = L.marker([-7.291426879053719, 111.59670962762208]).bindPopup('<h3 style="text-align:center"><b>Warung Lontong Mbah Ginem</b></h3><hr><p style="text-align:justify">Warung Mbah Ginem adalah warung lontong yang berjualan setiap sore hari sekaligus terletak di pondokan mahasiswa KKN PPM UGM 2022 Unit Tambakrejo, Kabupaten Bojonegoro. Menu yang disediakan berupa lontong sayur dan lontong pecel dengan sambar kacang. Warung ini libur setiap hari Kamis Pahing karena pada hari itu semua warga berbelanja ke pasar sehingga dapat dipastikan memiliki masakan di rumah masing-masing.</p><br><img src="https://live.staticflickr.com/65535/52387466437_17dac2e9b3_w.jpg" alt="Warung Lontong Mbah Ginem" width="300" height="200"/>').addTo(map);
+	
+	var marker = L.marker([-7.26659842245892, 111.5980292143854]).bindPopup('<h3 style="text-align:center"><b>Pasar Taji</b></h3><hr><p style="text-align:justify">Pasar Taji merupakan pasar yang terletak di perempatan Taji, Kecamatan Tambakrejo, Kabupaten Bojonegoro. Pasar ini merupakan pasar utama di Kecamatan Tambakrejo. Pasar Taji menjual berbagai bahan makanan, makanan jadi, dan perlengkapan rumah tangga. Pasar ini ramai dikunjungi setiap hari Kamis Pahing.</p><br><img src="https://live.staticflickr.com/65535/52388638178_d1ffdbd36f.jpg" alt="Pasar Taji" width="300" height="200"/>').addTo(map);
+	
+	var marker = L.marker([-7.263757308048529, 111.59897148615492]).bindPopup('<h3 style="text-align:center"><b>Joyna Cafe</b></h3><hr><p style="text-align:justify">Joyna Cafe merupakan sebuah <i>cafe</i>yang memiliki harga terjangkau di Kecamatan Tambakrejo. <i>cafe</i>ini menjadi tempat untuk mempersiapkan berbagai proker, presensi, dan sesuatu yang mengahruskan untuk mengakses internet ketika pondokan mahasiswa KKN mengalami mati listrik.</p><br><img src="https://live.staticflickr.com/65535/52387466352_95bd368197_w.jpg" alt="Joyna Cafe" width="300" height="200"/>').addTo(map);
+	
+	var marker = L.marker([-7.2821320748557925, 111.60088468853581]).bindPopup('<h3 style="text-align:center"><b>Warung Makan Bu Wo</b></h3><hr><p style="text-align:justify">Warung Makan Bu Wo merupakan warung makan yang berada di Desa Ngrancang, Kecamatan Tambakrejo, Kabupaten Bojonegoro. Warung ini juga merupakan warung favorit mahasiswa KKN PPM UGM 2022 Unit Tambakrejo karena menu yang ditawarkan memiliki cita rasa yang nikmat dan harga yang sangat terjangkau. Dengan merogoh kantong 5 ribu rupiah saja, kita sudah dapat menikmati seblak yang cocok di lidah.</p><br><img src="https://live.staticflickr.com/65535/52388701374_efba341a0a.jpg" alt="Warung Makan Bu Wo" width="300" height="200"/>').addTo(map);
+
+	// Panggil file GeoJSON dan tambahkan sebagai layer poligon di peta
+fetch('data/batasadm.geojson') // Gantilah path/ke/file.geojson dengan URL sebenarnya dari file GeoJSON Anda.
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    // Buat layer poligon dari data GeoJSON
+    var batasLayer = L.geoJson(data, {
+      style: function (feature) {
+        return {
+          fillColor: 'green', // Ganti warna poligon sesuai keinginan
+          fillOpacity: 0.5, // Atur tingkat transparansi poligon
+          color: 'black', // Ganti warna garis batas poligon
+          weight: 2 // Atur ketebalan garis batas poligon
+        };
+      }
+    }).addTo(map);
+  });
+	</script>
+</body>
+</html>

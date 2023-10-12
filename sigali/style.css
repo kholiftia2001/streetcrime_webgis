@@ -1,0 +1,222 @@
+/*#map {*/
+/*    position: fixed;*/
+/*    width: 100vw;*/
+/*    height: calc(100vh-30px);*/
+    /* Mengurangi tinggi navbar (30px) dari tinggi viewport (100vh) */
+/*    top: 30px;*/
+/*}*/
+
+#homeButton {
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    padding: 5px 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+     background-image: url('<?= base_url("sigali/assets/images/homewhite.png") ?>'); 
+    background-image: url("assets/images/homewhite.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #E57C23;
+    z-index: 2;
+}
+
+#homeButton:hover {
+    background-color: #025464;
+}
+
+.myButton {
+    background-color: rgba(255, 255, 255, 0);
+    color: black;
+    width: 40px;
+    height: 40px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    align-items: center;
+    border: none;
+    z-index: 1;
+    /* Tambahkan ini untuk menghilangkan border */
+}
+
+.myButton:hover {
+    background-color: rgb(94, 159, 229, 1);
+    width: 40px;
+    /* Sesuaikan dengan lebar ikon */
+    height: 40px;
+    /* Sesuaikan dengan tinggi ikon */
+    border-radius: 50%;
+    /* Mengubah border menjadi lingkaran */
+    background-color: #025464;
+    /* Ganti dengan warna yang Anda inginkan */
+    padding: 5px;
+}
+
+.fsButtonDiv {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #E57C23;
+    z-index: 1;
+}
+
+.search-container {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    z-index: 2;
+}
+
+#searchInput {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    padding: 3px;
+    border: 1px solid #878686;
+    background-color: #ffffff;
+    border-radius: 5px;
+    width: 150px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+#suggestions {
+    position: fixed;
+    top: 80px;
+    left: 10px;
+    width: 200px;
+    list-style: none;
+    padding: 0;
+    margin-top: 0px;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border-collapse: collapse;
+    z-index: 3;
+}
+
+#suggestions li {
+    padding: 5px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+#suggestions li:hover {
+    background-color: #f2f2f2;
+    z-index: 3;
+}
+
+#searchButton {
+    position: absolute;
+    top: 0.5px;
+    left: 155px;
+    padding: 3px 10px;
+    background-color: #025464;
+    border: 1px solid #4e4e4e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#geolocation-button {
+    position: absolute;
+    top: 105px;
+    left: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    /* background-image: url('<?= base_url("sigali/assets/images/loca24.png") ?>'); */
+    background-image: url("assets/images/loca24.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #E57C23;
+    z-index: 1;
+}
+
+#geolocation-button:hover {
+    background-color: #025464;
+}
+
+/* Popup container */
+/*.popup {*/
+/*    position: absolute;*/
+/*    background: white;*/
+/*    padding: 10px;*/
+/*    min-height: 200px;*/
+/*    max-height: 500px;*/
+/*    min-width: 200px;*/
+/*    max-width: 300px;*/
+/*    height: 70px;*/
+/*    border-radius: 4px;*/
+/*    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);*/
+/*    font-family: Arial, sans-serif;*/
+/*    font-size: 12px;*/
+/*    line-height: 1.5;*/
+/*}*/
+
+/* Popup content */
+/*.popup-content {*/
+/*    margin-bottom: 5px;*/
+/*}*/
+
+/* Popup closer (close button) */
+/*.popup-closer {*/
+/*    position: absolute;*/
+/*    top: 5px;*/
+/*    right: 5px;*/
+/*    width: 16px;*/
+/*    height: 16px;*/
+    /* background: url('https://cdn.jsdelivr.net/npm/ol-popup/src/ol-popup/img/closer.png') no-repeat center center; */
+/*    background-size: 16px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/* Change cursor to pointer when hovering over the closer */
+/*.popup-closer:hover {*/
+/*    background-color: #fbaeae;*/
+/*}*/
+
+/*.hidden {*/
+/*    display: none;*/
+/*}*/
+
+/* Ganti #telepon menjadi .telepon */
+.telepon {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    background-image: url("assets/images/call.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e52364;
+    z-index: 2;
+}
+
+/* Efek hover */
+.telepon:hover {
+    background-color: #025464;
+}
